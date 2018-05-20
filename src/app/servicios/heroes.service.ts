@@ -68,6 +68,22 @@ export class HeroesService {
     return this.heroes[indice];
   }
 
+  buscarHeroes( termino:string ):Heroe[]{
+
+    let heroesArreglo:Heroe[] = [];
+    termino = termino.toLowerCase();
+
+    for( let heroe of this.heroes ){
+      let nombre = heroe.nombre.toLowerCase();
+
+      if( nombre.indexOf( termino ) >= 0 ){
+        heroesArreglo.push( heroe );
+      }
+    }
+
+    return heroesArreglo;
+  }
+
 }
 
 //defino una interface para que todos los heroes tengan la misma estructura
