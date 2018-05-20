@@ -64,6 +64,10 @@ export class HeroesService {
     return this.heroes;
   }
 
+  getHeroe( indice:number ){
+    return this.heroes[indice];
+  }
+
 }
 
 //defino una interface para que todos los heroes tengan la misma estructura
