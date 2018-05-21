@@ -14,7 +14,7 @@
   <!-- [heroe] es el nombre de la propiedad en heroe-tarjeta.component -->
   <!-- "heroe" es la variable que estoy creando en el for -->
   <!-- con esto envio informacion al hijo con @Input -->
-  <app-heroe-tarjeta [heroe]="heroe" [indice]="i" *ngFor="let heroe of heroes; let i = index">
+  <app-heroe-tarjeta [heroe]="heroe" [indice]="heroe.idx" *ngFor="let heroe of heroes">
   </app-heroe-tarjeta>
 
 </div>

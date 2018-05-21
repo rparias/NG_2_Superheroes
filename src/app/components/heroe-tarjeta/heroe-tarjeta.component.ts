@@ -24,10 +24,10 @@ export class HeroeTarjetaComponent implements OnInit {
   }
 
   verHeroe(){
-    // this.router.navigate( ['/heroe', this.indice] )
+    this.router.navigate( ['/heroe', this.indice] )
 
     //aqui se llama al metodo verHeroe(i) del padre
-    this.heroeSeleccionado.emit(this.indice);
+    //this.heroeSeleccionado.emit(this.indice);
   }
 
 }
