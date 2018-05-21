@@ -12,13 +12,18 @@ export class HeroesComponent implements OnInit {
 
   //le paso al constructor un argumento llamado _heroesService de tipo HeroesService
   //con esto el servicio queda listo para usar
-  constructor( private _heroesService:HeroesService ) {
+  constructor( private _heroesService:HeroesService,
+                private router:Router, ) {
 
   }
 
   //ngOnInit es para cuando ya esta toda la pagina renderizada
   ngOnInit() {
     this.heroes = this._heroesService.getHeroes();
+  }
+
+  verHeroe( indice:number ){
+    this.router.navigate( ['/heroe', indice] )
   }
 
 }

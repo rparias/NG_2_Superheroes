@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Heroe } from '../../servicios/heroes.service';
 import { Router } from '@angular/router';
 
@@ -13,13 +13,21 @@ export class HeroeTarjetaComponent implements OnInit {
   @Input() heroe:Heroe;
   @Input() indice:number;
 
-  constructor( private router:Router ) { }
+  //aqui pongo el nombre del evento q el padre este escuchando
+  @Output() heroeSeleccionado: EventEmitter<number>;
+
+  constructor( private router:Router ) {
+    this.heroeSeleccionado = new EventEmitter();
+  }
 
   ngOnInit() {
   }
 
-  verHeroe( indice:number ){
-    this.router.navigate( ['/heroe', this.indice] )
+  verHeroe(){
+    // this.router.navigate( ['/heroe', this.indice] )
+
+    //aqui se llama al metodo verHeroe(i) del padre
+    this.heroeSeleccionado.emit(this.indice);
   }
 
 }
